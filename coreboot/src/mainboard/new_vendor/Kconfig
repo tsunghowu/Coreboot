@@ -1,0 +1,20 @@
+if VENDOR_NEW_VENDOR
+
+choice
+	prompt "Mainboard model"
+
+config BOARD_NEW_VENDOR_BOARD
+	bool "CHW Cougar Canyon 2 CRB"
+
+config BOARD_ADLINK_EXPRESS_HL
+	bool "CHW Adlink Express-HL"
+endchoice
+
+source "src/mainboard/new_vendor/new_vendor_board/Kconfig"
+source "src/mainboard/new_vendor/express-hl/Kconfig"
+
+config MAINBOARD_VENDOR
+	string
+	default "Chw_mainboard_vendor"
+
+endif # VENDOR_NEW_VENDOR

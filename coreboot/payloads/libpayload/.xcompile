@@ -1,0 +1,17 @@
+# x86 TARCH_SEARCH=  /home/peterch.wu/workspace/coreboot/payloads/libpayload/../../util/crossgcc/xgcc/bin/i386-elf- i386-elf- /home/peterch.wu/workspace/coreboot/payloads/libpayload/../../util/crossgcc/xgcc/bin/i386-eabi- i386-eabi- /home/peterch.wu/workspace/coreboot/payloads/libpayload/../../util/crossgcc/xgcc/bin/x86_64-elf- x86_64-elf- /home/peterch.wu/workspace/coreboot/payloads/libpayload/../../util/crossgcc/xgcc/bin/x86_64-eabi- x86_64-eabi-
+# elf32-i386 toolchain (/home/peterch.wu/workspace/coreboot/payloads/libpayload/../../util/crossgcc/xgcc/bin/i386-elf-gcc)
+CC_i386:=/home/peterch.wu/workspace/coreboot/payloads/libpayload/../../util/crossgcc/xgcc/bin/i386-elf-gcc  -Wno-unused-but-set-variable  -Wa,--divide -fno-stack-protector -Wl,--build-id=none
+AS_i386:=/home/peterch.wu/workspace/coreboot/payloads/libpayload/../../util/crossgcc/xgcc/bin/i386-elf-as 
+LD_i386:=/home/peterch.wu/workspace/coreboot/payloads/libpayload/../../util/crossgcc/xgcc/bin/i386-elf-ld 
+NM_i386:=/home/peterch.wu/workspace/coreboot/payloads/libpayload/../../util/crossgcc/xgcc/bin/i386-elf-nm
+OBJCOPY_i386:=/home/peterch.wu/workspace/coreboot/payloads/libpayload/../../util/crossgcc/xgcc/bin/i386-elf-objcopy
+OBJDUMP_i386:=/home/peterch.wu/workspace/coreboot/payloads/libpayload/../../util/crossgcc/xgcc/bin/i386-elf-objdump
+READELF_i386:=/home/peterch.wu/workspace/coreboot/payloads/libpayload/../../util/crossgcc/xgcc/bin/i386-elf-readelf
+STRIP_i386:=/home/peterch.wu/workspace/coreboot/payloads/libpayload/../../util/crossgcc/xgcc/bin/i386-elf-strip
+AR_i386:=/home/peterch.wu/workspace/coreboot/payloads/libpayload/../../util/crossgcc/xgcc/bin/i386-elf-ar
+
+# armv7 TARCH_SEARCH=  /home/peterch.wu/workspace/coreboot/payloads/libpayload/../../util/crossgcc/xgcc/bin/armv7a-elf- armv7a-elf- /home/peterch.wu/workspace/coreboot/payloads/libpayload/../../util/crossgcc/xgcc/bin/armv7a-eabi- armv7a-eabi-
+IASL:=/home/peterch.wu/workspace/coreboot/payloads/libpayload/../../util/crossgcc/xgcc/bin/iasl
+
+# native toolchain
+HOSTCC:=gcc
