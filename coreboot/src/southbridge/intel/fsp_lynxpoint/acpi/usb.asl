@@ -64,6 +64,40 @@ Device (EHCI)
 	}
 }
 
+// EHCI #2 Controller 0:1a.0
+
+Device (EHC2)
+{
+	Name(_ADR, 0x001a0000)
+
+	Name (_PRW, Package(){ 13, 4 }) // Power Resources for Wake
+
+	// Leave USB ports on for to allow Wake from USB
+
+	Method(_S3D,0)	// Highest D State in S3 State
+	{
+		Return (2)
+	}
+
+	Method(_S4D,0)	// Highest D State in S4 State
+	{
+		Return (2)
+	}
+
+	Device (HUB7)
+	{
+		Name (_ADR, 0x00000000)
+
+		// How many are there?
+		Device (PRT1) { Name (_ADR, 1) } // USB Port 0
+		Device (PRT2) { Name (_ADR, 2) } // USB Port 1
+		Device (PRT3) { Name (_ADR, 3) } // USB Port 2
+		Device (PRT4) { Name (_ADR, 4) } // USB Port 3
+		Device (PRT5) { Name (_ADR, 5) } // USB Port 4
+		Device (PRT6) { Name (_ADR, 6) } // USB Port 5
+	}
+}
+
 // XHCI Controller 0:14.0
 
 Device (XHCI)

@@ -29,6 +29,9 @@ chip northbridge/intel/fsp_haswell
 
 	device domain 0 on
 		device pci 00.0 on end # host bridge
+		device pci 01.0 on end # X16 PEG Port 0
+		#device pci 01.1 on end # X16 PEG Port 1
+		#device pci 06.0 on end # X16 PEG Port 2
 		device pci 02.0 on end # vga controller
 
 		chip southbridge/intel/fsp_lynxpoint # Intel Series 8 Lynx Point PCH

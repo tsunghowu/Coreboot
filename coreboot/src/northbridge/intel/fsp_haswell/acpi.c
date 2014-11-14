@@ -174,13 +174,14 @@ int init_igd_opregion(igd_opregion_t *opregion)
 	 * Maybe it should move to the finalize handler
 	 */
 	igd = dev_find_slot(0, PCI_DEVFN(0x2, 0));
-
-	pci_write_config32(igd, ASLS, (u32)opregion);
-	reg16 = pci_read_config16(igd, SWSCI);
-	reg16 &= ~(1 << 0);
-	reg16 |= (1 << 15);
-	pci_write_config16(igd, SWSCI, reg16);
-
+	if (igd) {
+		pci_write_config32(igd, ASLS, (u32)opregion);
+		reg16 = pci_read_config16(igd, SWSCI);
+		reg16 &= ~(1 << 0);
+		reg16 |= (1 << 15);
+		pci_write_config16(igd, SWSCI, reg16);
+	}
+  
 	/* clear dmisci status */
 	reg16 = inw(get_pmbase() + TCO1_STS);
 	reg16 |= DMISCI_STS; // reference code does an &=

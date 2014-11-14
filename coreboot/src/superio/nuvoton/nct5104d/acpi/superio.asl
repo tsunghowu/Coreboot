@@ -56,7 +56,8 @@
 #include <superio/acpi/pnp.asl>
 
 Device(SUPERIO_DEV) {
-	Name (_HID, EisaId("PNP0A05"))
+	Name (_ADR, SUPERIO_PNP_BASE)
+//<CHW>Remove this for Windows 7 booting	Name (_HID, EisaId("PNP0A05"))
 	Name (_STR, Unicode("Nuvotun NCT5104D Super I/O"))
 	Name (_UID, SUPERIO_UID(SUPERIO_DEV,))
 

@@ -25,7 +25,7 @@ config SANDYBRIDGE_FSP_SPECIFIC_OPTIONS
 
 config FSP_FILE
 	string
-	default "../intel/fsp/ivybridge_bd82x6x/FvFsp.bin"
+	default "../intel/fsp/haswell_fsp/FvFsp.bin"
 	help
 	  The path and filename of the Intel FSP binary for this platform.
 

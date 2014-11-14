@@ -126,7 +126,276 @@ EarlyBiosPostProgramming (
   MmioOr32 ((UINTN) (SaPlatformPolicyPpi->PlatformData->MchBar + 0x5F00), BIT0);
 }
 #endif
-#define NB_GDXC_BASE_ADDRESS	0xfed84000
+
+const UINT32 AzaliaTableData[] =  {
+    //===================================================================================================
+    //
+    //                               Realtek Semiconductor Corp.
+    //
+    //===================================================================================================
+    
+    //Realtek High Definition Audio Configuration
+    //Realtek HD Audio Codec : ALC892
+    //PCI PnP ID : PCI\VEN_0000&DEV_0000&SUBSYS_00000000
+    //HDA Codec PnP ID : HDAUDIO\FUNC_01&VEN_10EC&DEV_0892&SUBSYS_00000000
+    //The number of verb command block : 16
+    
+    //    NID 0x11 : 0x411110F0
+    //    NID 0x12 : 0x411111F0
+    //    NID 0x14 : 0x0101F030
+    //    NID 0x15 : 0x01011031
+    //    NID 0x16 : 0x01016032
+    //    NID 0x17 : 0x41012033
+    //    NID 0x18 : 0x01A19850
+    //    NID 0x19 : 0x42A19C80
+    //    NID 0x1A : 0x01813051
+    //    NID 0x1B : 0x42214C40
+    //    NID 0x1C : 0x5993105F
+    //    NID 0x1D : 0x40000100
+    //    NID 0x1E : 0x01442070
+    //    NID 0x1F : 0x41C46060
+    
+    
+    //===== HDA Codec Subsystem ID Verb-table =====
+    //HDA Codec Subsystem ID  : 0x80867270
+    0x00172070,
+    0x00172172,
+    0x00172286,
+    0x00172380,
+    
+    
+    //===== Pin Widget Verb-table =====
+    //Widget node 0x01 :
+    0x0017FF00,
+    0x0017FF00,
+    0x0017FF00,
+    0x0017FF00,
+    //Pin widget 0x11 S/PDIF-OUT2
+    0x01171CF0,
+    0x01171D10,
+    0x01171E11,
+    0x01171F41,
+    //Pin widget 0x12 DMIC
+    0x01271CF0,
+    0x01271D11,
+    0x01271E11,
+    0x01271F41,
+    //Pin widget 0x14 FRONT (Port-D)
+    0x01471C30,
+    0x01471DF0,
+    0x01471E01,
+    0x01471F01,
+    //Pin widget 0x15 SURR (Port-A)
+    0x01571C31,
+    0x01571D10,
+    0x01571E01,
+    0x01571F01,
+    //Pin widget 0x16 CEN/LFE (Port-G)
+    0x01671C32,
+    0x01671D60,
+    0x01671E01,
+    0x01671F01,
+    //Pin widget 0x17 SIDESURR (Port-H)
+    0x01771C33,
+    0x01771D20,
+    0x01771E01,
+    0x01771F41,
+    //Pin widget 0x18 MIC1 (Port-B)
+    0x01871C50,
+    0x01871D98,
+    0x01871EA1,
+    0x01871F01,
+    //Pin widget 0x19 MIC2 (Port-F)
+    0x01971C80,
+    0x01971D9C,
+    0x01971EA1,
+    0x01971F42,
+    //Pin widget 0x1A LINE1 (Port-C)
+    0x01A71C51,
+    0x01A71D30,
+    0x01A71E81,
+    0x01A71F01,
+    //Pin widget 0x1B LINE2 (Port-E)
+    0x01B71C40,
+    0x01B71D4C,
+    0x01B71E21,
+    0x01B71F42,
+    //Pin widget 0x1C CD-IN
+    0x01C71C5F,
+    0x01C71D10,
+    0x01C71E93,
+    0x01C71F59,
+    //Pin widget 0x1D BEEP-IN
+    0x01D71C00,
+    0x01D71D01,
+    0x01D71E00,
+    0x01D71F40,
+    //Pin widget 0x1E S/PDIF-OUT
+    0x01E71C70,
+    0x01E71D20,
+    0x01E71E44,
+    0x01E71F02,
+};
+const UINT32 CrbHdaVerbTblADLINK[] = {	
+//HDACfg Version : 3.99
+//HD Audio Codec : ALC888/ALC888S
+//PCI PnP ID : PCI\VEN_8086&DEV_2668&SUBSYS_088810EC
+//HDA Codec PnP ID : HDAUDIO\FUNC_01&VEN_10EC&DEV_0888&SUBSYS_10EC0888
+//Pin Widget Count : 14
+
+//    NID 0x14 : 0x01014410
+//    NID 0x15 : 0x01011412
+//    NID 0x16 : 0x01016411
+//    NID 0x17 : 0x01012414
+//    NID 0x18 : 0x01A19C30
+//    NID 0x19 : 0x02A19C31
+//    NID 0x1A : 0x01813C3F
+//    NID 0x1B : 0x02214C1F
+//    NID 0x1C : 0x411111F0
+//    NID 0x1D : 0x4005E601
+//    NID 0x1E : 0x014B1120
+//    NID 0x1F : 0x01CB1140
+//    NID 0x11 : 0x411111F0
+//    NID 0x12 : 0x411111F0
+
+
+//===== HDA Codec Subsystem ID Verb-table =====
+//HDA Codec Subsystem ID  : 0x10EC0888
+0x00172088,
+0x00172108,
+0x001722EC,
+0x00172310,
+
+//===== Pin Widget Verb-table =====
+//Pin Complex (NID 0x14 )
+0x01471C10,
+0x01471D44,
+0x01471E01,
+0x01471F01,
+//Pin Complex (NID 0x15 )
+0x01571C12,
+0x01571D14,
+0x01571E01,
+0x01571F01,
+//Pin Complex (NID 0x16 )
+0x01671C11,
+0x01671D64,
+0x01671E01,
+0x01671F01,
+//Pin Complex (NID 0x17 )
+0x01771C14,
+0x01771D24,
+0x01771E01,
+0x01771F01,
+//Pin Complex (NID 0x18 )
+0x01871C30,
+0x01871D9C,
+0x01871EA1,
+0x01871F01,
+//Pin Complex (NID 0x19 )
+0x01971C31,
+0x01971D9C,
+0x01971EA1,
+0x01971F02,
+//Pin Complex (NID 0x1A )
+0x01A71C3F,
+0x01A71D3C,
+0x01A71E81,
+0x01A71F01,
+//Pin Complex (NID 0x1B )
+0x01B71C1F,
+0x01B71D4C,
+0x01B71E21,
+0x01B71F02,
+//Pin Complex (NID 0x1C )
+0x01C71CF0,
+0x01C71D11,
+0x01C71E11,
+0x01C71F41,
+//Pin Complex (NID 0x1D )
+0x01D71C01,
+0x01D71DE6,
+0x01D71E05,
+0x01D71F40,
+//Pin Complex (NID 0x1E )
+0x01E71C20,
+0x01E71D11,
+0x01E71E4B,
+0x01E71F01,
+//Pin Complex (NID 0x1F )
+0x01F71C40,
+0x01F71D11,
+0x01F71ECB,
+0x01F71F01,
+//Pin Complex (NID 0x11 )
+0x01171CF0,
+0x01171D11,
+0x01171E11,
+0x01171F41,
+//Pin Complex (NID 0x12 )
+0x01271CF0,
+0x01271D11,
+0x01271E11,
+0x01271F41
+};
+
+const AUDIO_AZALIA_VERB_TABLE AzaliaVerbTable = {
+  //
+  //  VerbTable: (RealTek ALC892)
+  //  Revision ID = 0xff
+  //  Codec Verb Table For Azalia on Lava Canyon
+  //  Codec Address: CAd value (0/1/2)
+  //  Codec Vendor: 0x10EC0892
+  //
+    {
+    0x10EC,     // Vendor ID
+    0x0888,     // Device ID
+    0xFF,       // Revision ID (any)
+    0xFF,       // SDI number (any)
+    15 * 4,     // Data size in DWORDs
+    0x00000000  // Reserved
+    },
+    (UINT32 *)CrbHdaVerbTblADLINK
+};
+
+const UINT32 SaAudioTableData[] = {
+  ///
+  /// Audio Verb Table - 0x80862807
+  ///
+  /// Pin Widget 5 - PORT B
+  ///
+  0x00571C10,
+  0x00571D00,
+  0x00571E56,
+  0x00571F18,
+  ///
+  /// Pin Widget 6 - PORT C
+  ///
+  0x00671C20,
+  0x00671D00,
+  0x00671E56,
+  0x00671F19,
+
+};
+
+
+const AUDIO_SA_VERB_TABLE SaVerbTable = {
+  ///
+  ///  VerbTable:
+  ///  Revision ID = 0xFF
+  ///  Codec Vendor: 0x80862807
+  ///
+    {
+    0x80862807, ///< Vendor ID/Device ID
+    0x0000,     ///< SubSystem ID
+    0xFF,       ///< Revision ID
+    0x02,       ///< Front panel support (1=yes, 2=no)
+    0x0002,     ///< Number of Rear Jacks
+    0x0000,     ///< Number of Front Jacks
+    },
+    (UINT32 *)SaAudioTableData
+};
+
 static void ConfigureDefaultUpdData(UPD_DATA_REGION   *UpdData)
 {/*
 	UpdData->HTEnable = TRUE;
@@ -134,24 +403,31 @@ static void ConfigureDefaultUpdData(UPD_DATA_REGION   *UpdData)
 	UpdData->MemoryDownEnable = FALSE;
 	UpdData->FastBootEnable = CONFIG_ENABLE_FSP_FAST_BOOT;
 */
-	/*
+	
 	UpdData->SerialDebugPortAddress = 0x3F8;
 	UpdData->SerialDebugPortType = 1;
+	/*
 	UpdData->PcdMrcDebugMsg = TRUE;
 	UpdData->PcdEnableRmt = TRUE;
 	UpdData->PcdUserCrbBoardType = 0;
 	*/
 	printk(BIOS_DEBUG, "PcdFastBoot %x\n", UpdData->PcdFastBoot );
+	UpdData->PcdEnableAzalia = TRUE;
+	UpdData->SaHdaVerbTablePtr  = (AUDIO_SA_VERB_TABLE *)&SaVerbTable;
+  UpdData->AzaliaVerbTablePtr = (AUDIO_AZALIA_VERB_TABLE *)&AzaliaVerbTable;
+  
+  UpdData->PcdInternalGfx = 1;
+  UpdData->PcdPrimaryDisplay = 0;
 //UpdData->PcdFastBoot = 0;
 
-printk(BIOS_DEBUG, "PcdMmioSize %x\n", UpdData->PcdMmioSize );
-printk(BIOS_DEBUG, "PcdApertureSize %x\n", UpdData->PcdApertureSize );
-printk(BIOS_DEBUG, "PcdIgdDvmt50PreAlloc %x\n", UpdData->PcdIgdDvmt50PreAlloc );
-printk(BIOS_DEBUG, "PcdTsegSize %x\n", UpdData->PcdTsegSize );
+//printk(BIOS_DEBUG, "PcdMmioSize %x\n", UpdData->PcdMmioSize );
+//printk(BIOS_DEBUG, "PcdApertureSize %x\n", UpdData->PcdApertureSize );
+//printk(BIOS_DEBUG, "PcdIgdDvmt50PreAlloc %x\n", UpdData->PcdIgdDvmt50PreAlloc );
+//printk(BIOS_DEBUG, "PcdTsegSize %x\n", UpdData->PcdTsegSize );
 
-printk(BIOS_DEBUG, "Dump B0, D0, F0:  \n");
-dump_memory((unsigned char *)0xF8000000, 0x100 );
-dump_pci_context(0,0,0, 0x100);
+//printk(BIOS_DEBUG, "Dump B0, D0, F0:  \n");
+//dump_memory((unsigned char *)0xF8000000, 0x100 );
+//dump_pci_context(0,0,0, 0x100);
 #if 0
 {
 	volatile unsigned long *ddTemp;

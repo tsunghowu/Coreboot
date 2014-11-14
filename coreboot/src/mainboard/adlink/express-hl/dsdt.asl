@@ -36,7 +36,7 @@ DefinitionBlock(
 	#include <southbridge/intel/fsp_lynxpoint/acpi/globalnvs.asl>
 
 	// General Purpose Events
-	//#include "acpi/gpe.asl"
+	#include "acpi/gpe.asl"
 
 	#include "acpi/thermal.asl"
 

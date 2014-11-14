@@ -126,7 +126,7 @@ void mainboard_romstage_entry(unsigned long bist)
 		.temp_mmio_base = 0xfed08000,
 		.system_type = 5, /* ULT */
 		.tseg_size = CONFIG_SMM_TSEG_SIZE,
-		.spd_addresses = { 0xa2, 0x00, 0xa2, 0x00 },
+		.spd_addresses = { 0xa0, 0xa2, 0xa4, 0xa6 },
 		.ec_present = 1,
 		// 0 = leave channel enabled
 		// 1 = disable dimm 0 on channel
@@ -347,8 +347,8 @@ void romstage_main_continue(EFI_STATUS status, VOID *HobListPtr) {
 	 * now, so disable the audio block.
 	 */
 	reg32 = RCBA32(FD);
-	reg32 |= PCH_DISABLE_HD_AUDIO;
-	RCBA32(FD) = reg32;
+//Not disable HD Audio	reg32 |= PCH_DISABLE_HD_AUDIO;
+//	RCBA32(FD) = reg32;
 
 	post_code(0x49);
 
