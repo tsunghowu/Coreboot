@@ -46,6 +46,6 @@ Scope (\_GPE)
          //       {
          //               \_SB.PCI0.GFX0.GSCI() // Handle the SWSCI
          //       }
-         DBGP("_L06....\n")
+//         DBGP("_L06....\n")
         }
 }
